@@ -19,11 +19,13 @@ export class EditcompanyComponent implements OnInit {
   company:Companies;
   findcompany:Companies;
   objupdate:Companies;
-
+  boarddirstr:string;
+  assocstr:string;
   bodname:string;
   bodarr:string[];
   assocse:string;
   assocarr:string[];
+  first:number;
   constructor(private loginserviceService: LoginserviceService,
     private router: Router,private getonecompanyservice:GetonecompanyService,private companyallService:CompanyallService,private route:ActivatedRoute) 
     {
@@ -57,7 +59,30 @@ export class EditcompanyComponent implements OnInit {
           datasinglecomp=>
           {
             this.findcompany=datasinglecomp;
-            
+            this.boarddirstr="";
+            this.assocstr="";
+            this.first=0;
+            if(this.findcompany.boardOfDirs){
+            this.findcompany.boardOfDirs.forEach(element => {
+              if(this.first>0)
+                this.boarddirstr+=",";
+              else
+                this.first=1;
+              this.boarddirstr+=element.boardOfDirName;
+              
+            });
+          }
+            this.first=0;
+            if(this.findcompany.assocStockExchange){
+            this.findcompany.assocStockExchange.forEach(element => {
+              if(this.first>0)
+                this.assocstr+=",";
+              else
+                this.first=1;
+              this.assocstr+=element.stockexchange+":"+element.stockcode;
+              
+            });
+          }
           }
         );
       }
@@ -78,7 +103,7 @@ export class EditcompanyComponent implements OnInit {
    
    for (let i = 0; i < this.bodarr.length; i++) {
     console.log("here"+this.bodarr[i])
-     this.findcompany.boardOfDirs[i].boardOfDirName=this.bodarr[i];
+     this.company.boardOfDirs[i].boardOfDirName=this.bodarr[i];
    }
  }
  if(this.assocse!=null){
@@ -89,13 +114,19 @@ export class EditcompanyComponent implements OnInit {
    //this.company.assocStockExchange[0].stockcode=this.assocarr[0].split(":")[1];
  
    for (let i = 0; i < this.assocarr.length; i++) {
-     this.findcompany.assocStockExchange[i].stockexchange=this.assocarr[i].split(":")[0];
-     this.findcompany.assocStockExchange[i].stockcode=this.assocarr[i].split(":")[1];
+     this.company.assocStockExchange[i].stockexchange=this.assocarr[i].split(":")[0];
+     this.company.assocStockExchange[i].stockcode=this.assocarr[i].split(":")[1];
    }
  }
+ this.company.ceo=this.findcompany.ceo;
+ this.company.companyCode=this.findcompany.companyCode;
+ this.company.companyDetails=this.findcompany.companyDetails;
+ this.company.companyId=this.findcompany.companyId;
+ this.company.companyName=this.findcompany.companyName;
+ this.company.sector=this.findcompany.sector;
 
 
-    let res = await this.companyallService.updateCompany(this.findcompany)
+    let res = await this.companyallService.updateCompany(this.company)
     if(res!=null){
       this.router.navigate(['/managecompany']);
     }
