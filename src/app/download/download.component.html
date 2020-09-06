@@ -1,0 +1,61 @@
+<app-adminheader></app-adminheader>
+
+<div class="commonmain">
+
+  <circle-progress
+  [percent]="progress"
+  [radius]="100"
+  [outerStrokeWidth]="16"
+  [innerStrokeWidth]="8"
+  [outerStrokeColor]="'#5070F7'"
+  [innerStrokeColor]="'#00FFFF'"
+  [animation]="true"
+  [animationDuration]="600"
+></circle-progress>
+
+
+
+    
+      
+      <label class="btn btn-default">
+        <input type="file" (change)="selectFile($event)" />
+      </label>
+      
+      <button class="btn btn-primary btn-lg" [disabled]="!selectedFiles" (click)="upload()">
+        <b>Upload</b>
+       
+      </button>
+      
+    <!--
+      <div class="alert alert-success" role="alert"><b>{{message[0]}}</b></div>
+      <div class="alert alert-primary" role="alert"><b>{{message[1]}}</b></div>
+      <div class="alert alert-primary" role="alert"><b>{{message[2]}}</b></div>
+      <div class="alert alert-primary" role="alert"><b>{{message[3]}}</b></div>
+      <div class="alert alert-primary" role="alert"><b>{{message[4]}}</b></div>
+
+    -->
+
+
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h5 class="text-center py-4">Summary of the uploaded File once uploaded will appear here
+          </h5>
+          </li>
+      
+        
+        <li class="list-group-item list-group-item-primary"><b>{{message[0]}}</b></li>
+        <li class="list-group-item list-group-item-primary"><b>{{message[1]}}</b></li>
+        <li class="list-group-item list-group-item-primary"><b>{{message[2]}}</b></li>
+        <li class="list-group-item list-group-item-primary"><b>{{message[3]}}</b></li>
+        <li class="list-group-item list-group-item-primary"><b>{{message[4]}}</b></li>
+        
+      </ul>
+
+      
+      <div class="card">
+        
+      </div>
+</div>
+
+

@@ -1,0 +1,53 @@
+<app-adminheader></app-adminheader>
+<div class="commonmain">
+  <div class="container">
+    <div class="mx-auto" >
+        <h2>Add Company</h2>
+        </div>
+      
+        <form   (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <label for="companyName">Company Name</label>
+            <input type="text" class="form-control" required id="companyName" [(ngModel)]="company.companyName" name="companyName">
+          </div>
+          <div class="form-group">
+
+            <label for="companyCode">Company Code</label>
+            <input type="text"  class="form-control" required  id="companyCode" [(ngModel)]="company.companyCode" name="companyCode">
+            </div>
+            <div class="form-group">
+                <label for="ceo">CEO</label>
+            <input type="text" class="form-control" required id="ceo" [(ngModel)]="company.ceo" name="ceo">
+            
+            </div>
+            <div class="form-group">
+                <label for="boardOfDirs">Board of Directors</label>
+            <input type="text" class="form-control" id="bodname" [(ngModel)]="bodname" name="bodname">
+           
+            </div>
+            <div class="form-group">
+                <label for="sector">Sector</label>
+            <input type="text"  class="form-control" id="sector" [(ngModel)]="company.sector" name="sector">
+            </div>
+          
+            <div class="form-group">
+                <label for="companyDetails">Company Details</label>
+            <input type="text" class="form-control" required id="companyDetails" [(ngModel)]="company.companyDetails" name="companyDetails">
+            </div>
+            <div class="form-group">
+          <label for="assocStockExchange">Stock Exchange with stock id(e.g-abc:123,cde:234)</label>
+          
+            <input type="text" class="form-control" id="assocse" [(ngModel)]="assocse" name="assocse">
+            
+            </div>
+
+         
+      
+            <button class="btn btn-primary" type="submit">ADD COMPANY</button>
+          
+        
+        </form>
+      </div>
+           
+        
+</div>

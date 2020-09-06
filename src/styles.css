@@ -1,0 +1,35 @@
+.maindiventire{
+    height: 100%;
+    width: 100%;
+    background-image: url(assets/background3.jpg);
+    image-resolution: initial;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: center;
+    background-repeat: repeat;
+   
+}
+.commonmain{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 90px;
+    justify-items: start;
+    
+}
+
+/*
+.commonmain{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 90px;
+    justify-items: start;
+    
+}
+
+*/

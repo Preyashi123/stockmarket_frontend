@@ -1,0 +1,18 @@
+footer {
+    position: flex;
+    align-self: flex-end;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    color: black;
+    flex-basis: auto;
+    width: inherit;
+}
+.iteminside{
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: whitesmoke;
+  
+}

@@ -1,0 +1,24 @@
+<app-preloginheader></app-preloginheader>
+<div class="commonmain">
+<div>
+    <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Username</span>
+              </div>
+              <input class="form-control" placeholder="username" aria-label="username" aria-describedby="username" (keyup)="onKey($event)" >
+
+    </div>
+    <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Password</span>
+              </div>
+            <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="password"  (keyup)="onKeypassword($event)" >
+            </div>
+            <div class="input-group mb-3" style="display:flex; align-self: center;">
+                <button class="button btn-dark" (click)="login()">Login</button>
+         </div>
+
+</div>
+<p>New to StockMarket? <button class="button btn-dark" (click)="signup()">SignUp</button></p>
+<p>{{errormsg}}</p>
+</div>

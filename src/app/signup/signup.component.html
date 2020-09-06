@@ -1,0 +1,35 @@
+<app-preloginheader></app-preloginheader>
+<div class="commonmain">
+    <div  >
+        <h3>Sign Up</h3>
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="name">Username</label>
+              <input type="text" class="form-control" id="userName" required [(ngModel)]="user.userName" name="userName">
+            </div>
+        
+            <div class="form-group">
+              <label for="name">Password</label>
+              <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password">
+            </div>
+        
+            <div class="form-group">
+              <label for="name">Email Address</label>
+              <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name = "email">
+            </div>
+        
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+        <div *ngIf="success && processend ">
+          
+          <p>Signup Successful. Please login to continue. </p>
+          <button class="button btn-dark" (click)="login()">Login</button>
+        
+        </div>
+        <div *ngIf="!success && processend">Failure. Please try again.</div>
+        
+        
+
+
+</div>

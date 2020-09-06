@@ -1,0 +1,87 @@
+<app-userheader></app-userheader>
+<div class="commonmain">
+<html>
+    <head>
+        <title>Compare Sector</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+        <div class="row row-content">
+            <div class="col-12 col-md-9">
+                <div class="jumbotron" >
+                <h2>Compare Sectors</h2>
+                </div>
+            </div>
+             <div class="col-12 col-md-9">
+                 <form id="formElem">
+                     <div class="form-group row">
+                         <label for="sectorSelection" class="col-md-4 col-form-label"><h4>Select Sector</h4></label>
+                         <div class="col-md-8">
+                                <select class="browser-default custom-select custom-select-lg mb-3" [(ngModel)]="sectorvalue" [ngModelOptions]="{standalone: true}">
+                                    <option>Sectors</option>
+                                    <option *ngFor="let sector of sectors">{{sector.sectorName}}</option>
+                                </select>
+                         </div>
+                     </div>
+                     <div class="form-group row">
+                         <label for="companySelection" class="col-md-4 col-form-label"><h4>Select Company</h4></label>
+                         <div class="col-md-8">
+                            <select class="browser-default custom-select custom-select-lg mb-3" [(ngModel)]="companyvalue" [ngModelOptions]="{standalone: true}" [disabled]="disablevalue == 'disable'">
+                                <option>Companies</option>
+                                <option>Select All</option>
+                                <option *ngFor="let company of companies">{{company.companyName}}</option>
+                              </select>
+                         </div>
+                     </div>
+    
+                     <div class="form-group row">
+                         <label for="Period" class="col-12 col-md-4 col-form-label" ><h4>Period</h4></label>
+                         <div class="col-5 col-md-4">
+                            <select class="browser-default custom-select custom-select-lg mb-3" [(ngModel)]="fromperiod" [ngModelOptions]="{standalone: true}">
+                                <option selected>Start Date</option>
+                                <option value="2020-08-28">2020-08-28</option>
+                                <option value="1998-10-12">1998-10-12</option>
+                                <option value="1998-10-13">1998-10-13</option>
+                              </select>
+                         </div>
+                         <div class="col-7 col-md-4">
+                            <select class="browser-default custom-select custom-select-lg mb-3" [(ngModel)]="toperiod" [ngModelOptions]="{standalone: true}">
+                                <option selected>End Date</option>
+                                <option value="2020-08-28">2020-08-28</option>
+                                <option value="1998-10-12">1998-10-12</option>
+                                <option value="1998-10-13">1998-10-13</option>
+                              </select>
+                         </div>
+                     </div>
+                     
+                     <div class="form-group row">
+                        <label for="Periodicity" class="col-12 col-md-4 col-form-label"><h4>Periodicity (Days)</h4></label>
+                        <div class="col-md-8">    
+                            <input type="text" class="form-control form-control-lg" placeholder="Enter Days"  [(ngModel)]="period" [ngModelOptions]="{standalone: true}">
+                        </div>  
+                     </div>
+                     
+                     <div class="form-group row">
+                         <div class="offset-md-4 col-md-4">
+                             <button type="button" class="btn-lg btn-danger" (click)="sendData()">
+                                 Generate Map
+                             </button>
+                         </div>
+                         <div class="col-md-4">
+                             <button type="reset" class="btn-lg btn-warning" (click)="saveFormData()" [disabled]="companyvalue != 'Select All'">
+                                 +
+                             </button>
+                         </div>
+                     </div>
+                 </form>
+             </div>
+              
+        </div>
+        </div>
+    </body>
+    <div>
+        <app-rendermap></app-rendermap>
+    </div>
+</html>
+</div>

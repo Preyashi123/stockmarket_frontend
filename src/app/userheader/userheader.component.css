@@ -1,0 +1,9 @@
+.nav-item{
+    padding:2px;
+    margin-left: 7px;
+}
+.nav-itemlogout{
+    align-content: flex-end;
+    padding:2px;
+    margin-left: 7px;
+}

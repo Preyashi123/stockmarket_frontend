@@ -1,0 +1,63 @@
+<app-adminheader></app-adminheader>
+<div class="commonmain">
+    <div class="container">
+        <div class="mx-auto" >
+            <h2>Update Company</h2>
+            </div>
+            
+  
+    <form  (ngSubmit)="onSubmit()">
+      
+        <div class="form-group">
+                    <label for="companyId">Company ID</label>
+        <input class="form-control" disabled=true id="companyId" name="companyId" [value]="findcompany.companyId" type="text" [(ngModel)]="findcompany.companyId">
+        </div>
+        
+        <div class="form-group">
+                     <label for="companyName">Company Name</label>
+        
+        <input class="form-control" type="text" id="companyName" name="companyName" value="findcompany.companyName" [(ngModel)]="findcompany.companyName">
+        </div>
+        
+        <div class="form-group">
+                     <label for="companyCode">Company Code</label>
+        <input class="form-control" type="text"  id="companyCode" name="companyCode" [value]="findcompany.companyCode" [(ngModel)]="findcompany.companyCode">
+        </div>
+        
+         <div class="form-group">
+            
+                <label for="ceo">CEO</label>
+        <input class="form-control" type="text" id="ceo" name="ceo" [value]="findcompany.ceo" [(ngModel)]="findcompany.ceo">
+        </div>
+        
+        <div class="form-group">
+                <label for="boardOfDirs">Board of Directors</label>
+        <input class="form-control" type="text" name="boardofDirs" id="boardOfDirs" [value]="findcompany.boardOfDirs" [(ngModel)]="bodname">
+        </div>
+    
+
+        <div class="form-group">
+              <label for="sector">Sector</label>
+        <input class="form-control" type="text"  name="sector" id="sector" [value]="findcompany.sector" [(ngModel)]="findcompany.sector">
+        </div>
+
+        <div class="form-group">
+        <label for="companyDetails">Company Details</label>
+        <input class="form-control" type="text" name="companyDetails" id="companyDetails" [value]="findcompany.companyDetails" [(ngModel)]="findcompany.companyDetails">
+        </div>
+
+        <div class="form-group">
+        <label for="assocStockExchange">Stock Exchange with stock id(e.g-abc:123,cde:234)</label>
+        <input class="form-control" type="text" name="assocStockExchange" id="assocStockExchange"  [value]="findcompany.assocStockExchange" [(ngModel)]="assocse">
+        </div>
+
+     
+  
+        <button class="btn btn-primary" type="submit">UPDATE COMPANY</button>
+    
+  
+    </form>
+  
+   
+  </div>
+</div>

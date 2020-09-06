@@ -1,0 +1,47 @@
+<div class="container">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" routerLink="/adminlanding">StockMarket</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+  
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/importdata" >Import data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/managecompany">Manage Company</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/manageexchange">Manage Exchange</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/updateipo">Update IPO details</a>
+          </li>
+         
+  
+      </ul>
+      <div class="nav-itemlogout">
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+
+
+
+
+
+<!--
+<div class="maindivadmin">
+    <button  >Import Data</button>
+    <button >Manage Company</button>
+    <button >Manage Exchange</button>
+    <button >Update IPO Details</button>
+    <button (click)="logout()" >Logout</button>
+</div>
+*ngIf="getLoginDetails() === 'y'"-->

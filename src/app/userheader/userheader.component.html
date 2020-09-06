@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" routerLink="/userlanding">StockMarket</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+  
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/iposuser">Ipos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/comparecompany">Compare Company</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/comparesector">Compare Sector</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/otheruser">Other</a>
+          </li>
+      </ul>
+      <div class="nav-itemlogout">
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </div>
+    </div>
+  </nav>
+  

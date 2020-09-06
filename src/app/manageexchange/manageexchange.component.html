@@ -1,0 +1,45 @@
+<app-adminheader></app-adminheader>
+<div class="commonmain">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="card-body">
+          <ul class="text-center list-inline py-3">
+            <li class="list-inline-item">
+              <a routerLink="/manageexchange" class="btn btn-info btn-lg" >List StockExchanges</a>
+                </li>
+            <li class="list-inline-item">
+              <a routerLink="/addexchange" class="btn btn-info btn-lg">Add StockExchange</a>
+                </li>
+          </ul>
+        </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<div class="container">
+<div class="card my-5">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Brief</th>
+          <th scope="col">Contact Address</th>
+          <th scope="col">Remarks</th>
+          <th scope="col">Companies Listed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stockExchange of stockExchanges">
+          <td>{{ stockExchange.stockExchange}}</td>
+          <td>{{ stockExchange.brief }}</td>
+          <td>{{ stockExchange.contactAddress }}</td>
+          <td>{{ stockExchange.remarks }}</td>
+          <td><button (click)="companyList(stockExchange.stockExchangeId)" class="btn btn-info">Details</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+</div>
