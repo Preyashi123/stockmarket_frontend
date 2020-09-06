@@ -143,8 +143,8 @@ export class ComparesectorComponent implements OnInit {
     //console.log(this.lolCompanyStockPrice);
     this.companyList = [];
 
-    this.disablevalue = 'disable';
-    this.flag = true;
+    //this.disablevalue = 'disable';
+    //this.flag = true;
   }
 
   sendData(): void{
@@ -220,13 +220,16 @@ export class ComparesectorComponent implements OnInit {
       this.obj3.push(temp3);
     });
 
-    this.lolSectorPriceDetails[1].forEach(element => {
+    if(this.lolSectorPriceDetails.length>1)
+    {
+      this.lolSectorPriceDetails[1].forEach(element => {
       var temp4 = {
         "currentPrice" : element.price,
         "date" : element.date
       }
       this.obj4.push(temp4);
-    });
+      });
+    }
     
 
     //console.log(this.lolCompanyStockPrice);
